@@ -3070,6 +3070,11 @@ public class HTMLScanner
                		}
     	        }
 
+                // if there is already same attribute, ignore current attribute
+                if (attributes.getIndex(aname) != -1) {
+                    return true;
+                }
+
                 fQName.setValues(null, aname, aname, null);
                 String avalue = fStringBuffer.toString();
                 attributes.addAttribute(fQName, "CDATA", avalue);
