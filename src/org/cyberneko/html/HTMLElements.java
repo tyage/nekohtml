@@ -430,19 +430,19 @@ public class HTMLElements {
             // TBODY O O (TR)+
             new Element(TBODY, "TBODY", 0, TABLE, new short[]{THEAD,TBODY,TFOOT,TD,TH,TR,COLGROUP}),
             // TD - O (%flow;)*
-            new Element(TD, "TD", Element.CONTAINER, TR, TABLE, new short[]{TD,TH}),
+            new Element(TD, "TD", 0, TR, TABLE, new short[]{TD,TH}),
             // TEXTAREA - - (#PCDATA)
             new Element(TEXTAREA, "TEXTAREA", Element.SPECIAL, BODY, null),
             // TFOOT - O (TR)+
             new Element(TFOOT, "TFOOT", 0, TABLE, new short[]{THEAD,TBODY,TFOOT,TD,TH,TR}),
             // TH - O (%flow;)*
-            new Element(TH, "TH", Element.CONTAINER, TR, TABLE, new short[]{TD,TH}),
+            new Element(TH, "TH", 0, TR, TABLE, new short[]{TD,TH}),
             // THEAD - O (TR)+
             new Element(THEAD, "THEAD", 0, TABLE, new short[]{THEAD,TBODY,TFOOT,TD,TH,TR,COLGROUP}),
             // TITLE - - (#PCDATA) -(%head.misc;)
             new Element(TITLE, "TITLE", Element.SPECIAL, new short[]{HEAD,BODY}, null),
             // TR - O (TH|TD)+
-            new Element(TR, "TR", Element.BLOCK, new short[]{TBODY, THEAD, TFOOT}, TABLE, new short[]{TD,TH,TR,COLGROUP,DIV}),
+            new Element(TR, "TR", Element.BLOCK, TABLE, new short[]{TD,TH,TR,COLGROUP,DIV}),
             // TT - - (%inline;)*
             new Element(TT, "TT", Element.INLINE, BODY, null),
         };
